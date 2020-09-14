@@ -1,0 +1,97 @@
+% !Mode:: "TeX:UTF-8"
+
+\def\usewhat{pdflatex} % 定义编译方式 pdflatex, dvipdfmx, or xelatex
+
+
+\def\xuewei{Doctor} % 定义学位 Doctor or Master
+%\def\xueweidoctor
+%bmeps .jpg .eps
+
+\documentclass[cs4size,openany,UTF8]{ctexbook}
+\usepackage[a4paper,text={160true mm,234true mm},top=30.5true mm,left=25true mm,head=5true mm,headsep=2.5true mm,foot=8.5true mm]{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{txfonts}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{ntheorem}
+\usepackage{titlesec}
+\usepackage{subfigure}
+\usepackage{tabularx}
+\usepackage[sort&compress,numbers]{natbib}
+\usepackage[boxed,linesnumbered,algochapter]{algorithm2e}
+\usepackage{epstopdf}	
+\usepackage{hyperref}
+%\usepackage[unicode,dvipdfmx]{hyperref}
+
+%`\usepackage{array,graphicx,subfig}
+
+%\usepackage{array}
+%\usepackage[caption=false,font=footnotesize,labelfont=sf,textfont=sf]{subfig}
+
+
+\usepackage{enumerate}
+
+
+\begin{document}
+
+\newif\ifxueweidoctor
+\newif\ifxueweimaster
+\def\temp{Doctor}
+\ifx\temp\xuewei
+  \xueweidoctortrue  \xueweimasterfalse
+\fi
+\def\temp{Master}
+\ifx\temp\xuewei
+  \xueweidoctorfalse  \xueweimastertrue
+\fi
+
+\input{format}
+\input{cover}
+\zihao{-4}
+
+
+\tableofcontents
+\thispagestyle{empty}
+\clearpage{\pagestyle{empty}}
+\setcounter{page}{1}
+
+%开题报告字数应不少于1.5万字。
+%
+
+\input{body/c1}%课题来源及研究的目的和意义
+\newpage
+\input{body/c2}%国内外在该方向的研究现状及分析（文献综述）
+\newpage
+\input{body/c3}%前期的理论研究与试验论证工作的结果
+\newpage
+\input{body/c4}%学位论文的主要研究内容、实施方案及其可行性论证
+\newpage
+\input{body/c5}%论文进度安排，预期达到的目标
+\newpage
+\input{body/c6}%学位论文预期创新点（要根据研究内容和国内外研究现状准确提炼，充分体现创新性）
+\newpage
+\input{body/c7}%为完成课题已具备和所需的条件、外协计划及经费
+\newpage
+\input{body/c8}%预计研究过程中可能遇到的困难、问题，以及解决的途径
+\newpage
+\input{body/c9}%主要参考文献
+\newpage
+
+
+%
+%\begin{thebibliography}{99}
+%\bibitem{c1}    xx.xx[D]. xx：xx，2018.1.1.
+%\end{thebibliography}
+
+
+%\bibliographystyle{GBT7714-2005NLang-HIT}
+%\addtolength{\bibsep}{-0.8em}
+%\nocite{*}
+%\bibliography{reference}
+
+\end{document}
